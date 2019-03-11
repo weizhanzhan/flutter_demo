@@ -10,6 +10,7 @@ class BasicDemo extends StatelessWidget {
     return Container(
       color: Colors.grey[100],
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,//主轴对齐方式
         children: <Widget>[
           Container(
             child: Icon(Icons.pool,size: 32.0,color: Colors.white,),
@@ -25,17 +26,26 @@ class BasicDemo extends StatelessWidget {
              //  但需要注意的是 deoration和 color： 背景颜色不能共存，二者同时只能有一个
 
               color: Color.fromRGBO(3, 54, 255, 1.0),
-              border: Border(//边框
-                top: BorderSide(
-                  color: Colors.indigoAccent[100],
-                  width: 3.0,
-                  style: BorderStyle.solid
-                ),
-                bottom: BorderSide(
-                  color: Colors.indigoAccent[100],
-                  width: 3.0,
-                  style: BorderStyle.solid
+              border:Border.all(    
+                color: Colors.indigoAccent[100],
+                width: 3.0,
+                style: BorderStyle.solid         
+              ),
+            //  borderRadius: BorderRadius.circular(16.0),
+              boxShadow: [//阴影
+                BoxShadow(
+                  offset:Offset(0.0,16.0),
+                  color:Color.fromRGBO(16, 20, 188, 1.0),
+                  blurRadius: 25.0,//模糊程度
+                  spreadRadius: -9.0
                 )
+              ],
+              shape: BoxShape.circle,//圆形形状不能设置borderRadius ，注释掉
+              gradient: RadialGradient(//镜像渐变
+                colors: [
+                  Color.fromRGBO(7, 102, 255, 1.0),
+                  Color.fromRGBO(3, 28, 128, 1.0)
+                ]
               )
             ),
           )
