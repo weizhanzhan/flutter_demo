@@ -3,7 +3,11 @@ import './demo/drawer_demo.dart';
 import './demo/bottom_navigation_demo.dart';
 import './demo/list_view.dart';
 import './demo/basic_demo.dart';
-void main() =>runApp(MyApp());
+import './demo/dadi.dart';
+import './demo/view_demo.dart';
+ void main() =>runApp(MyApp());
+// void main() =>runApp(DadiDemo());
+
 
 class MyApp extends StatelessWidget {
 
@@ -27,7 +31,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return  DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(title: Text('zhanwei'),
@@ -48,7 +52,8 @@ class Home extends StatelessWidget {
             tabs: <Widget>[
               Tab(icon: Icon(Icons.local_florist),),
               Tab(icon: Icon(Icons.change_history),),
-              Tab(icon: Icon(Icons.directions_bike),)
+              Tab(icon: Icon(Icons.directions_bike),),
+              Tab(icon: Icon(Icons.view_quilt),)
             ],
           ),
           actions: <Widget>[
@@ -66,10 +71,11 @@ class Home extends StatelessWidget {
           children: <Widget>[
             ListViewDemo(),
             BasicDemo(),//Icon(Icons.local_florist,size: 128.0,color: Colors.black12,),
-            Icon(Icons.local_florist,size: 128.0,color: Colors.black12,)
+            Icon(Icons.local_florist,size: 128.0,color: Colors.black12,),
+            ViewDemo()
           ],
         ),
-        bottomNavigationBar:BottomNavigationDemo(), 
+        bottomNavigationBar:BottomNavigationDemo(), //底部导航栏
         drawer:DrawerDemo(),
       )
     );

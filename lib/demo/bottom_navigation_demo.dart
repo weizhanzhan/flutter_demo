@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 class BottomNavigationDemo extends StatefulWidget {
 
   _BottomNavigationDemoState createState() => _BottomNavigationDemoState();
+  
 }
 
 class _BottomNavigationDemoState extends State<BottomNavigationDemo> {
 
-    int _currentIndex = 0;
+  int _currentIndex = 0;
   void _onTapHandler (int index){
     setState((){ //动态组件才会有
       _currentIndex = index;
